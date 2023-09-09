@@ -1,0 +1,6 @@
+minio:
+  accessKey: minio
+  secretKey: minio456
+  bucket: leadnews
+  endpoint: http://180.110.202.50:9000
+  readPath: http://180.110.202.50:9000

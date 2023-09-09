@@ -1,0 +1,18 @@
+server:
+  port: 9991  #端口号
+spring:
+  application:
+    name: kafka-demo #项目名称
+  kafka:
+    bootstrap-servers: 180.110.202.50:9092  #ip地址:端口号
+    producer:  #生产者
+      retries: 10  #重试次数
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer #key的序列化器
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer  #value的序列化器
+    consumer:  #消费者
+      group-id: ${spring.application.name}-test  #组的id
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer  #key的反序列化器
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer  #value的反序列化器
+kafka:
+  hosts: 180.110.202.50:9092
+  group: ${spring.application.name}
